@@ -2,7 +2,7 @@
 
 ## Process to Set up and run this project
 
-### Go to Source folder which is "walcart-category"
+### Go to Root folder which is "walcart-category"
 ### run => yarn / npm install
 ### to run dev => npm run dev / yarn run dev
 ### to build it => npm run build / yarn run build
