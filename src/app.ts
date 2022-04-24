@@ -1,10 +1,11 @@
 import http from "http";
+import dotenv from "dotenv";
 
 import express, { Application, Request, Response, NextFunction } from "express";
-import dotenv from "dotenv";
 import mongoose from "mongoose";
 import { ApolloServer } from "apollo-server-express";
 import { ApolloServerPluginLandingPageGraphQLPlayground } from "apollo-server-core";
+
 import categorytypeDefs from "./typeDefs/category";
 import categoryresolvers from "./resolvers/category";
 import { redis, categoryCacheKey } from "./config/redisConfig";
@@ -16,7 +17,8 @@ const app: Application = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json({ limit: "50mb" }));
 
-const URI: string = `${process.env.DATABSE_URI1}`;
+// you can also use process.env.DATABSE_URI
+const URI: string = `${process.env.DATABSE_URI_SRV}`;
 
 const db = async () => {
   try {
